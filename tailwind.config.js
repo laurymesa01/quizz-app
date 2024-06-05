@@ -15,6 +15,9 @@ module.exports = {
       'green': '#26D782',
       'red': '#EE5454'
     },
+    fontFamily: {
+      'rubik': 'Rubik'
+    },
     extend: {},
   },
   plugins: [],
