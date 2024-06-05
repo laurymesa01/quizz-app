@@ -2,3 +2,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.h1{
+  @apply text-8xl text-dark-navy font-bold leading-[100%];
+}
+
+.h2{
+  @apply text-4xl text-dark-navy font-bold leading-[100%];
+}
+
+.h3{
+  @apply text-4xl text-dark-navy font-light leading-[100%];
+}
+
+.h4{
+  @apply text-lg text-dark-navy font-bold leading-[100%];
+}
+
+.h5{
+  @apply text-base text-dark-navy font-bold leading-[100%];
+}
+
+.p{
+  @apply text-xs text-dark-navy leading-[150%];
+}
+
+.p-italic{
+  @apply text-xs text-dark-navy italic leading-[150%];
+}
