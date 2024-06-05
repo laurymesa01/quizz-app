@@ -18,6 +18,13 @@ module.exports = {
     fontFamily: {
       'rubik': 'Rubik'
     },
+    fontSize: {
+      'xs': '12px',
+      'base': '28px',
+      'lg': '36px',
+      '4xl': '64px',
+      '8xl': '144px'
+    },
     extend: {},
   },
   plugins: [],
