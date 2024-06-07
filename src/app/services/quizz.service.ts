@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { Quizz } from '../models/quizz.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,6 @@ export class QuizzService {
   constructor() { }
 
   getQuizzes(){
-    return this.http.get(this.url);
+    return this.http.get<Quizz[]>(this.url);
   }
 }

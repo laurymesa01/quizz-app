@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'quiz/:name',
+        path: 'quizz/:name',
         component: QuizComponent
       }
     ]
