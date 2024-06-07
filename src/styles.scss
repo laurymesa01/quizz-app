@@ -3,21 +3,25 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  width: 100%;
+  min-width: 320px;
+}
 
 .h1{
   @apply text-8xl text-dark-navy font-bold leading-[100%];
 }
 
 .h2{
-  @apply text-4xl text-dark-navy font-bold leading-[100%];
+  @apply text-[40px] md:text-4xl text-dark-navy font-bold leading-[100%];
 }
 
-.h3{
-  @apply text-4xl text-dark-navy font-light leading-[100%];
+.h2-light{
+  @apply text-[40px] md:text-4xl text-dark-navy font-light leading-[100%];
 }
 
 .h4{
-  @apply text-lg text-dark-navy font-bold leading-[100%];
+  @apply text-[18px] md:text-lg text-dark-navy font-bold leading-[100%];
 }
 
 .h5{
