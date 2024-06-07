@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Quizz } from '../models/quizz.model';
 
@@ -14,5 +14,10 @@ export class QuizzService {
 
   getQuizzes(){
     return this.http.get<Quizz[]>(this.url);
+  }
+
+  getQuizzByTitle(title: string){
+    const params = new HttpParams().set('title', title);
+    return this.http.get<Quizz>(`${this.url}`, { params });
   }
 }
