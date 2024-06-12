@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { Quizz } from '../../models/quizz.model';
 import { QuizzService } from '../../services/quizz.service';
-import { RouterLinkWithHref, RouterLinkActive, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { RouterLinkWithHref} from '@angular/router';
 
 
 @Component({

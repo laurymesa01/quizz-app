@@ -1,1 +1,8 @@
-<p>quiz works!</p>
+<div class="flex items-center absolute -top-1 mt-20">
+  <img [src]="quizz().icon" alt="">
+  <h5 class="h5 ml-2">{{quizz().title}}</h5>
+</div>
+
+@if (questions().length !== 0) {
+  <app-question [questions]="questions()"></app-question>
+}

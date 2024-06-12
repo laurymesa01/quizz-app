@@ -18,6 +18,6 @@ export class QuizzService {
 
   getQuizzByTitle(title: string){
     const params = new HttpParams().set('title', title);
-    return this.http.get<Quizz>(`${this.url}`, { params });
+    return this.http.get<Quizz[]>(`${this.url}`, { params });
   }
 }

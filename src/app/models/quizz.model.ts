@@ -9,3 +9,9 @@ export interface Question {
   options:  string[];
   answer:   string;
 }
+
+export interface SubmitedQuestion{
+  question: Question;
+  isCorrect: boolean;
+  isIncorrect: boolean;
+}
