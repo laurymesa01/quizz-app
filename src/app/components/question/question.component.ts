@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, signal } from '@angular/core';
-import { Question, SubmitedQuestion } from '../../models/quizz.model';
+import { Question } from '../../models/quizz.model';
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -13,17 +13,9 @@ export class QuestionComponent implements OnInit{
 
   @Input() questions: Question[] = [];
 
-  submitedQuestion = signal<SubmitedQuestion>({
-    question: {
-      question: '',
-      options: [],
-      answer: ''
-    },
-    isCorrect: false,
-    isIncorrect: false
-  });
   currentlyIndex: number = 0;
   selectedOption: string = '';
+  score: number = 0;
   correct: boolean = false;
   isSelected: boolean = false;
   isSubmited: boolean = false;
@@ -33,9 +25,9 @@ export class QuestionComponent implements OnInit{
 
 
   ngOnInit(): void {
-    if (this.questions) {
-      this.submitedQuestion().question = this.questions[this.currentlyIndex];
-    }
+    // if (this.questions) {
+    //   this.submitedQuestion().question = this.questions[this.currentlyIndex];
+    // }
   }
 
   checkAnswer(option: string){
@@ -43,7 +35,7 @@ export class QuestionComponent implements OnInit{
     this.selectedOption = option;
     this.isError = false;
     if (this.selectedOption === this.questions[this.currentlyIndex].answer) {
-      this.correct = true;
+      this.score ++;
     }
   }
 
