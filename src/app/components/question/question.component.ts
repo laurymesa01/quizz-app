@@ -38,7 +38,6 @@ export class QuestionComponent implements OnInit{
   checkAnswer(option: string){
     this.isSelected = true;
     this.isError = false;
-    this.isButtonDisabled = true;
     this.selectedOption = option;
     if (this.selectedOption === this.questions[this.currentlyIndex].answer) {
       this.score ++;
@@ -47,6 +46,7 @@ export class QuestionComponent implements OnInit{
 
   submitQuestion(){
     this.isSubmited = true;
+    this.isButtonDisabled = true;
     if (this.isSelected) {
       this.isNextQuestionButtonVisible = true;
       this.isSubmitButtonVisible = false;
