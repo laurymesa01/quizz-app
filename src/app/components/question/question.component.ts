@@ -28,19 +28,15 @@ export class QuestionComponent implements OnInit{
 
 
   ngOnInit(): void {
-    // if (this.questions) {
-    //   this.question.set(this.questions[this.currentlyIndex]);
-    // }
   }
 
   checkAnswer(option: string){
     this.isSelected = true;
-    this.selectedOption = option;
     this.isError = false;
+    this.selectedOption = option;
     if (this.selectedOption === this.questions[this.currentlyIndex].answer) {
       this.score ++;
     }
-
   }
 
   submitQuestion(){
@@ -60,8 +56,8 @@ export class QuestionComponent implements OnInit{
       this.isNextQuestionButtonVisible = false;
       this.isSubmitButtonVisible = true;
       this.isSubmited = false;
+      this.isSelected = false;
       this.isError = false;
-      console.log('CURRENTLY INDEX',this.currentlyIndex);
     }
     else{
       this.showComponent = false;
