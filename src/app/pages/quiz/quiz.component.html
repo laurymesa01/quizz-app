@@ -4,5 +4,11 @@
 </div>
 
 @if (questions().length !== 0) {
-  <app-question [questions]="questions()"></app-question>
+  <app-question [questions]="questions()" (onSendScore)="getScore($event)"/>
 }
+
+@if (isEndQuizz) {
+  <app-end-quizz [score]="score" [quizz]="quizz()"/>
+}
+
+

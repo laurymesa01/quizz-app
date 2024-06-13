@@ -9,7 +9,7 @@ body{
 }
 
 .h1{
-  @apply text-8xl text-dark-navy font-bold leading-[100%];
+  @apply text-[88px] md:text-8xl text-dark-navy font-bold leading-[100%];
 }
 
 .h2{
@@ -34,4 +34,8 @@ body{
 
 .p-italic{
   @apply text-xs text-dark-navy italic leading-[150%];
+}
+
+.btn{
+  @apply bg-purple text-pure-white py-6 rounded-2xl text-[18px] md:text-base leading-[100%] hover:opacity-40
 }

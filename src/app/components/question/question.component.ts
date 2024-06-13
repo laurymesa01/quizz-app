@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, signal } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, signal } from '@angular/core';
 import { Question } from '../../models/quizz.model';
 import { CommonModule } from "@angular/common";
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-question',
@@ -12,8 +13,10 @@ import { CommonModule } from "@angular/common";
 export class QuestionComponent implements OnInit{
 
   @Input() questions: Question[] = [];
+  @Output() onSendScore = new EventEmitter<number>;
 
-  currentlyIndex: number = 0;
+  currentlyIndex: number = 0
+  showComponent: boolean = true;
   selectedOption: string = '';
   score: number = 0;
   correct: boolean = false;
@@ -26,7 +29,7 @@ export class QuestionComponent implements OnInit{
 
   ngOnInit(): void {
     // if (this.questions) {
-    //   this.submitedQuestion().question = this.questions[this.currentlyIndex];
+    //   this.question.set(this.questions[this.currentlyIndex]);
     // }
   }
 
@@ -37,6 +40,7 @@ export class QuestionComponent implements OnInit{
     if (this.selectedOption === this.questions[this.currentlyIndex].answer) {
       this.score ++;
     }
+
   }
 
   submitQuestion(){
@@ -51,12 +55,20 @@ export class QuestionComponent implements OnInit{
   }
 
   nextQuestion(){
-    this.currentlyIndex ++;
-    this.isNextQuestionButtonVisible = false;
-    this.isSubmitButtonVisible = true;
-    this.isSubmited = false;
-    this.isError = false;
+    if (this.currentlyIndex !== this.questions.length - 1) {
+      this.currentlyIndex ++;
+      this.isNextQuestionButtonVisible = false;
+      this.isSubmitButtonVisible = true;
+      this.isSubmited = false;
+      this.isError = false;
+      console.log('CURRENTLY INDEX',this.currentlyIndex);
+    }
+    else{
+      this.showComponent = false;
+      this.onSendScore.emit(this.score);
+    }
   }
+
 
 
 

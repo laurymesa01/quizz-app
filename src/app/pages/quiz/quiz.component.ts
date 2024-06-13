@@ -2,11 +2,12 @@ import { Component, Input, OnInit, inject, signal } from '@angular/core';
 import { QuizzService } from '../../services/quizz.service';
 import { Question, Quizz } from '../../models/quizz.model';
 import { QuestionComponent } from "../../components/question/question.component";
+import { EndQuizzComponent } from "../../components/end-quizz/end-quizz.component";
 
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [QuestionComponent],
+  imports: [QuestionComponent, EndQuizzComponent],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss'
 })
@@ -21,8 +22,9 @@ export class QuizComponent implements OnInit{
   });
 
   questions = signal<Question[]>([]);
-
   private quizz_service = inject(QuizzService);
+  score: number = 0;
+  isEndQuizz: boolean = false;
 
   ngOnInit(){
     if (this.title) {
@@ -34,5 +36,10 @@ export class QuizComponent implements OnInit{
       })
     }
 
+  }
+
+  getScore(event: number){
+    this.score = event;
+    this.isEndQuizz = true;
   }
 }
