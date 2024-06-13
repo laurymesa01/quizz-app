@@ -19,6 +19,7 @@ export class QuestionComponent implements OnInit{
   showComponent: boolean = true;
   selectedOption: string = '';
   score: number = 0;
+  progress: number = 0;
   correct: boolean = false;
   isSelected: boolean = false;
   isSubmited: boolean = false;
@@ -28,8 +29,12 @@ export class QuestionComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.getProgress();
   }
 
+  getProgress(){
+    this.progress = (this.currentlyIndex + 1) * 10;
+  }
   checkAnswer(option: string){
     this.isSelected = true;
     this.isError = false;
@@ -58,6 +63,7 @@ export class QuestionComponent implements OnInit{
       this.isSubmited = false;
       this.isSelected = false;
       this.isError = false;
+      this.getProgress();
     }
     else{
       this.showComponent = false;
