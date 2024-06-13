@@ -9,11 +9,13 @@
     </section>
     <section class="mt-12 flex flex-col space-y-4 flex-grow lg:mt-0">
       @for (option of questions[currentlyIndex].options; track $index) {
-        <button class="bg-pure-white flex justify-between rounded-xl py-4 border-4 border-pure-white md:py-6 px-2 items-center cursor-pointer active:border-4  active:border-purple focus:border-4 focus:border-purple"
+        <button class="bg-pure-white flex justify-between rounded-xl py-4 border-4 border-pure-white md:py-6 px-2 items-center cursor-pointer  focus:border-4 focus:border-purple"
                 (click)="checkAnswer(option)"
                 [ngClass]="{'border-green': option === questions[currentlyIndex].answer && option === selectedOption && isSubmited}"
-                [ngClass]="{'border-red': option !== questions[currentlyIndex].answer && option === selectedOption && isSubmited}">
-          <div class="flex">
+                [ngClass]="{'border-red': option !== questions[currentlyIndex].answer && option === selectedOption && isSubmited}"
+                [disabled]="isButtonDisabled">
+
+                <div class="flex">
             <img src="" alt="">
             <h5 class="h5 ml-2 text-start">{{option}}</h5>
           </div>

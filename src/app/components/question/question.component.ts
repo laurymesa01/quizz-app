@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, signal } from '@angular/core';
 import { Question } from '../../models/quizz.model';
 import { CommonModule } from "@angular/common";
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-question',
@@ -26,6 +25,7 @@ export class QuestionComponent implements OnInit{
   isError: boolean = false;
   isNextQuestionButtonVisible: boolean = false;
   isSubmitButtonVisible: boolean = true;
+  isButtonDisabled = false;
 
 
   ngOnInit(): void {
@@ -38,6 +38,7 @@ export class QuestionComponent implements OnInit{
   checkAnswer(option: string){
     this.isSelected = true;
     this.isError = false;
+    this.isButtonDisabled = true;
     this.selectedOption = option;
     if (this.selectedOption === this.questions[this.currentlyIndex].answer) {
       this.score ++;
@@ -63,6 +64,7 @@ export class QuestionComponent implements OnInit{
       this.isSubmited = false;
       this.isSelected = false;
       this.isError = false;
+      this.isButtonDisabled = false;
       this.getProgress();
     }
     else{
