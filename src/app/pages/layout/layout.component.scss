@@ -2,6 +2,10 @@ section{
   background-image: url('../../../assets/images/pattern-background-mobile-light.svg');
 }
 
+section.dark{
+  background-image: url('../../../assets/images/pattern-background-mobile-dark.svg');
+}
+
 @media screen and (min-width: 768px) {
   section{
     background-image: url('../../../assets/images/pattern-background-tablet-light.svg');
@@ -11,5 +15,9 @@ section{
 @media screen and (min-width: 1024px) {
   section{
     background-image: url('../../../assets/images/pattern-background-desktop-light.svg');
+  }
+
+  section.dark{
+    background-image: url('../../../assets/images/pattern-background-desktop-dark.svg');
   }
 }

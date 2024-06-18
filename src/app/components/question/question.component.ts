@@ -26,6 +26,7 @@ export class QuestionComponent implements OnInit{
   isNextQuestionButtonVisible: boolean = false;
   isSubmitButtonVisible: boolean = true;
   isButtonDisabled = false;
+  stringRef = String;
 
 
   ngOnInit(): void {
@@ -72,9 +73,5 @@ export class QuestionComponent implements OnInit{
       this.onSendScore.emit(this.score);
     }
   }
-
-
-
-
 
 }

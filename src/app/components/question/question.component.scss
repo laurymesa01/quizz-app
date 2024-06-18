@@ -1,0 +1,22 @@
+.button-selection:focus .index{
+  background-color: #A729F5;
+  color: #ffff;
+}
+
+.correct{
+  border: 2px solid #26D782;
+}
+
+.correct .index{
+  background-color: #26D782;
+  color: #ffff;
+}
+
+.incorrect{
+  border: 2px solid #EE5454;
+}
+
+.incorrect .index{
+  background-color: #EE5454;
+  color: #ffff;
+}

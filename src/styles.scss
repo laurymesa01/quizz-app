@@ -9,23 +9,23 @@ body{
 }
 
 .h1{
-  @apply text-[88px] md:text-8xl text-dark-navy font-bold leading-[100%];
+  @apply text-[88px] md:text-8xl text-dark-navy font-bold leading-[100%] dark:text-pure-white;
 }
 
 .h2{
-  @apply text-[40px] md:text-4xl text-dark-navy font-bold leading-[100%];
+  @apply text-[40px] md:text-4xl text-dark-navy font-bold leading-[100%] dark:text-pure-white;
 }
 
 .h2-light{
-  @apply text-[40px] md:text-4xl text-dark-navy font-light leading-[100%];
+  @apply text-[40px] md:text-4xl text-dark-navy font-light leading-[100%] dark:text-pure-white;
 }
 
 .h4{
-  @apply text-[18px] md:text-lg text-dark-navy font-bold leading-[100%];
+  @apply text-[18px] md:text-lg text-dark-navy font-bold leading-[100%] dark:text-pure-white;
 }
 
 .h5{
-  @apply text-[18px] md:text-base text-dark-navy font-medium leading-[100%];
+  @apply text-[18px] md:text-base text-dark-navy font-medium leading-[100%] dark:text-pure-white;
 }
 
 .p{
@@ -33,7 +33,7 @@ body{
 }
 
 .p-italic{
-  @apply text-xs text-dark-navy italic leading-[150%];
+  @apply text-xs text-dark-navy italic leading-[150%] dark:text-light-bluish;
 }
 
 .btn{
