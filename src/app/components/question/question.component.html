@@ -3,8 +3,8 @@
     <section class="lg:w-1/3">
       <p class="p-italic">Question {{currentlyIndex + 1}} of {{questions.length}}</p>
       <h4 class="h4 mt-6 text-start">{{questions[currentlyIndex].question}}</h4>
-      <div class="w-full mt-6 lg:mt-52 bg-pure-white rounded-full h-2 dark:bg-navy">
-        <div class="bg-purple h-2 rounded-full" [style.width.%]="progress"></div>
+      <div class="w-full mt-6 lg:mt-52 bg-pure-white rounded-full py-0.5 px-0.5 dark:bg-navy">
+        <div class="bg-purple h-1.5 rounded-full" [style.width.%]="progress"></div>
       </div>
     </section>
     <section class="mt-12 flex flex-col space-y-4 flex-grow lg:mt-0">
@@ -15,7 +15,7 @@
                 [class.incorrect]="option !== questions[currentlyIndex].answer && option === selectedOption && isSubmited"
                 [disabled]="isButtonDisabled">
           <div class="flex items-center">
-            <div class="index bg-light-grey text-grey-navy focus:bg-purple focus:text-pure-white py-2 w-12 rounded-lg text-[28px]">
+            <div class="index bg-light-grey text-grey-navy focus:bg-purple focus:text-pure-white py-1 w-12 rounded-lg text-[28px] dark:bg-grey-navy dark:text-light-grey">
               {{stringRef.fromCharCode(65 + $index)}}
             </div>
             <h5 class="h5 ml-4 text-start">{{option}}</h5>
