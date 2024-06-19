@@ -10,8 +10,9 @@ export interface Question {
   answer:   string;
 }
 
-export interface SubmitedQuestion{
-  question: Question;
-  isCorrect: boolean;
-  isIncorrect: boolean;
+export enum Colors{
+  LightOrange = '#FFF1E9',
+  LightGreen = '#E0FDEF',
+  LightBlue = '#EBF0FF',
+  LightViolet = '#F6E7FF'
 }

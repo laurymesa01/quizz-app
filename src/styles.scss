@@ -21,7 +21,7 @@ body{
 }
 
 .h4{
-  @apply text-[18px] md:text-lg text-dark-navy font-bold leading-[100%] dark:text-pure-white;
+  @apply text-[20px] md:text-lg text-dark-navy font-bold leading-[100%] dark:text-pure-white;
 }
 
 .h5{
@@ -33,9 +33,19 @@ body{
 }
 
 .p-italic{
-  @apply text-xs text-dark-navy italic leading-[150%] dark:text-light-bluish;
+  @apply text-xs md:text-sm text-dark-navy italic leading-[150%] dark:text-light-bluish;
 }
 
 .btn{
   @apply bg-purple text-pure-white py-5 rounded-2xl text-[18px] md:text-base leading-[100%] hover:opacity-70
 }
+
+// app-layout section{
+//   background-image: url('./assets/images/pattern-background-mobile-light.svg');
+// }
+
+// @media(prefers-color-scheme: dark){
+//   app-layout section{
+//     background-image: url('./assets/images/pattern-background-mobile-dark.svg');
+//   }
+// }

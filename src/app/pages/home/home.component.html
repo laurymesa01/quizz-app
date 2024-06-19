@@ -4,12 +4,12 @@
     <h2 class="h2 mt-2">Frontend Quiz!</h2>
     <p class="p-italic mt-6">Pick a subject to get started.</p>
   </section>
-  <section class="mt-12 flex flex-col space-y-4 flex-grow lg:mt-0">
+  <section class="mt-12 flex flex-col space-y-3 flex-grow lg:mt-0">
     @for (quizz of quizzes(); track $index) {
       <a [routerLink]="['quizz', quizz.title]">
-        <div class="bg-pure-white flex rounded-xl py-4 px-2 items-center dark:bg-navy">
-          <img [src]="quizz.icon" [alt]="quizz.title">
-          <h4 class="h5 ml-2">{{quizz.title}}</h4>
+        <div class="bg-pure-white shadow-sm flex rounded-xl py-3 px-3 items-center dark:bg-navy">
+          <img [style.background-color]="getColor($index)" [src]="quizz.icon" [alt]="quizz.title" class="rounded py-1 px-1">
+          <h4 class="h5 ml-6">{{quizz.title}}</h4>
         </div>
       </a>
     }

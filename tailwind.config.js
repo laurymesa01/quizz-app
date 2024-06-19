@@ -20,7 +20,8 @@ module.exports = {
       'rubik': 'Rubik'
     },
     fontSize: {
-      'xs': '12px',
+      'xs': '14px',
+      'sm': '20px',
       'base': '28px',
       'lg': '36px',
       '4xl': '64px',

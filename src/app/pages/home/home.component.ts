@@ -1,5 +1,5 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
-import { Quizz } from '../../models/quizz.model';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
+import { Colors, Quizz } from '../../models/quizz.model';
 import { QuizzService } from '../../services/quizz.service';
 import { RouterLinkWithHref} from '@angular/router';
 
@@ -12,8 +12,10 @@ import { RouterLinkWithHref} from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit{
+
   quizzes = signal<Quizz[]>([]);
   private quizz_service = inject(QuizzService);
+
 
   ngOnInit(){
     this.quizz_service.getQuizzes().subscribe({
@@ -21,5 +23,10 @@ export class HomeComponent implements OnInit{
         this.quizzes.set(quizzes)
       }
     })
+  }
+
+  getColor(i: number){
+    const colors = ['#FFF1E9', '#E0FDEF', '#EBF0FF', '#F6E7FF'];
+    return colors[i % colors.length];
   }
 }
