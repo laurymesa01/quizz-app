@@ -46,11 +46,11 @@ export class QuestionComponent implements OnInit{
   }
 
   submitQuestion(){
-    this.isSubmited = true;
-    this.isButtonDisabled = true;
     if (this.isSelected) {
       this.isNextQuestionButtonVisible = true;
       this.isSubmitButtonVisible = false;
+      this.isButtonDisabled = true;
+      this.isSubmited = true;
     }
     else{
       this.isError = true;

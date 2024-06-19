@@ -29,11 +29,11 @@ body{
 }
 
 .p{
-  @apply text-xs text-dark-navy leading-[150%];
+  @apply text-xs md:text-[24px] text-grey-navy leading-[150%] dark:text-light-bluish;
 }
 
 .p-italic{
-  @apply text-xs md:text-sm text-dark-navy italic leading-[150%] dark:text-light-bluish;
+  @apply text-xs md:text-sm text-grey-navy italic leading-[150%] dark:text-light-bluish;
 }
 
 .btn{
