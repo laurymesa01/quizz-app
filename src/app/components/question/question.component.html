@@ -15,7 +15,7 @@
                 [class.incorrect]="option !== questions[currentlyIndex].answer && option === selectedOption && isSubmited"
                 [disabled]="isButtonDisabled">
           <div class="flex items-center">
-            <div class="index bg-light-grey text-grey-navy focus:bg-purple focus:text-pure-white py-1 w-12 rounded-lg text-[28px] dark:bg-grey-navy dark:text-light-grey">
+            <div class="index bg-light-grey text-grey-navy py-1 w-12 rounded-lg text-[18px] md:text-[28px] dark:bg-grey-navy dark:text-light-grey">
               {{stringRef.fromCharCode(65 + $index)}}
             </div>
             <h5 class="h5 ml-4 text-start">{{option}}</h5>
