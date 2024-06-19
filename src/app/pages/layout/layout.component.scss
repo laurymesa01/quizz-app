@@ -2,19 +2,27 @@ section{
   background-image: url('../../../assets/images/pattern-background-mobile-light.svg');
 }
 
-// section.dark{
-//   background-image: url('../../../assets/images/pattern-background-mobile-dark.svg');
-// }
+.dark{
+  background-image: url('../../../assets/images/pattern-background-mobile-dark.svg');
+}
 
 @media screen and (min-width: 768px) {
   section{
     background-image: url('../../../assets/images/pattern-background-tablet-light.svg');
+  }
+
+  .dark{
+    background-image: url('../../../assets/images/pattern-background-tablet-dark.svg');
   }
 }
 
 @media screen and (min-width: 1024px) {
   section{
     background-image: url('../../../assets/images/pattern-background-desktop-light.svg');
+  }
+
+  .dark{
+    background-image: url('../../../assets/images/pattern-background-desktop-dark.svg');
   }
 
 }
