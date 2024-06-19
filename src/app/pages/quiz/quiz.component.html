@@ -1,5 +1,5 @@
 <div class="flex items-center absolute -top-1 mt-20">
-  <img [src]="quizz().icon" alt="">
+  <img [src]="quizz().icon" alt="quizz().title" class="rounded py-1 px-1" [style.background-color]="getColor(quizz().title)">
   <h5 class="h5 ml-2">{{quizz().title}}</h5>
 </div>
 

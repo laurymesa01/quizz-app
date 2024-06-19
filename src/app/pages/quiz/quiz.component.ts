@@ -3,6 +3,7 @@ import { QuizzService } from '../../services/quizz.service';
 import { Question, Quizz } from '../../models/quizz.model';
 import { QuestionComponent } from "../../components/question/question.component";
 import { EndQuizzComponent } from "../../components/end-quizz/end-quizz.component";
+import { ColorsService } from '../../services/colors.service';
 
 @Component({
   selector: 'app-quiz',
@@ -22,9 +23,11 @@ export class QuizComponent implements OnInit{
   });
 
   questions = signal<Question[]>([]);
-  private quizz_service = inject(QuizzService);
   score: number = 0;
   isEndQuizz: boolean = false;
+  private quizz_service = inject(QuizzService);
+  private colors_service = inject(ColorsService);
+  color: string = '';
 
   ngOnInit(){
     if (this.title) {
@@ -41,5 +44,14 @@ export class QuizComponent implements OnInit{
   getScore(event: number){
     this.score = event;
     this.isEndQuizz = true;
+  }
+
+  getColor(quizz: string){
+    this.colors_service.switchColorByQuizz(quizz).subscribe({
+      next: (c) => {
+        this.color = c
+      }
+    })
+    return this.color;
   }
 }
