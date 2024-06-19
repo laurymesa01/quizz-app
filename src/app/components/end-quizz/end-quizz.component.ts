@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Quizz } from '../../models/quizz.model';
 import { RouterLinkWithHref} from '@angular/router';
+import { ColorsService } from '../../services/colors.service';
 
 
 @Component({
@@ -18,6 +19,18 @@ export class EndQuizzComponent {
     icon: '',
     questions: []
   };
+
+  private colors_service = inject(ColorsService);
+  color: string = '';
+
+  getColor(quizz: string){
+    this.colors_service.switchColorByQuizz(quizz).subscribe({
+      next: (c) => {
+        this.color = c
+      }
+    })
+    return this.color;
+  }
 
 
 }
