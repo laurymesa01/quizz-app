@@ -2,7 +2,7 @@ button{
   outline: none;
 }
 
-.button-selection:focus .index, .button-selection:focus:hover .index{
+.button-selection:focus .index:not(:hover){
   background-color: #A729F5;
   color: #ffff;
 }
@@ -16,7 +16,7 @@ button{
   border: 2px solid #26D782;
 }
 
-.correct .index{
+.correct:not(:hover) .index{
   background-color: #26D782;
   color: #ffff;
 }
@@ -25,7 +25,7 @@ button{
   border: 2px solid #EE5454;
 }
 
-.incorrect .index{
+.incorrect .index:not(:hover){
   background-color: #EE5454;
   color: #ffff;
 }
