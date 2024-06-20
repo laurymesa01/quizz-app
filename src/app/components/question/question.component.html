@@ -13,7 +13,9 @@
                 (click)="checkAnswer(option)"
                 [class.correct]="option === questions[currentlyIndex].answer && option === selectedOption && isSubmited"
                 [class.incorrect]="option !== questions[currentlyIndex].answer && option === selectedOption && isSubmited"
-                [disabled]="isButtonDisabled">
+                [disabled]="isButtonDisabled"
+                tabindex="0"
+                (keydown.enter)="checkAnswer(option)">
           <div class="flex items-center">
             <div class="index bg-light-grey text-grey-navy py-1 w-12 rounded-lg text-[18px] md:text-[28px] dark:bg-grey-navy dark:text-light-grey">
               {{stringRef.fromCharCode(65 + $index)}}
@@ -39,10 +41,20 @@
         </button>
       }
       @if (isSubmitButtonVisible) {
-        <button class="mt-2 btn" (click)="submitQuestion()">Submit answer</button>
+        <button tabindex="0"
+                class="mt-2 btn"
+                (click)="submitQuestion()"
+                (keydown.enter)="submitQuestion()">
+                Submit answer
+        </button>
       }
       @if (isNextQuestionButtonVisible) {
-        <button class="mt-2 btn" (click)="nextQuestion()">Next question</button>
+        <button tabindex="0"
+                class="mt-2 btn"
+                (click)="nextQuestion()"
+                (keydown.enter)="nextQuestion()">
+                Next question
+        </button>
       }
       @if (isError) {
         <span class="flex justify-center items-center">

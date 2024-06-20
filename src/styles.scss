@@ -37,15 +37,6 @@ body{
 }
 
 .btn{
-  @apply bg-purple text-pure-white py-5 rounded-2xl text-[18px] md:text-base leading-[100%] hover:opacity-70
+  @apply bg-purple text-pure-white py-5 rounded-2xl text-[18px] md:text-base leading-[100%] hover:opacity-70 focus:opacity-70;
 }
 
-// app-layout section{
-//   background-image: url('./assets/images/pattern-background-mobile-light.svg');
-// }
-
-// @media(prefers-color-scheme: dark){
-//   app-layout section{
-//     background-image: url('./assets/images/pattern-background-mobile-dark.svg');
-//   }
-// }

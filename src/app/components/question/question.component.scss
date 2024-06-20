@@ -1,4 +1,8 @@
-.button-selection:focus .index{
+button{
+  outline: none;
+}
+
+.button-selection:focus .index, .button-selection:focus:hover .index{
   background-color: #A729F5;
   color: #ffff;
 }
