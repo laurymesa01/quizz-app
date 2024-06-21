@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, signal } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, signal } from '@angular/core';
 import { Question } from '../../models/quizz.model';
 import { CommonModule } from "@angular/common";
 
@@ -33,9 +33,17 @@ export class QuestionComponent implements OnInit{
     this.getProgress();
   }
 
+  @HostListener('keydown.arrowDown', ['$event'])
+  onArrowDown(event: KeyboardEvent, index: number){
+    event.preventDefault();
+  }
+
+  moveFocus(){}
+
   getProgress(){
     this.progress = (this.currentlyIndex + 1) * 10;
   }
+
   checkAnswer(option: string){
     this.isSelected = true;
     this.isError = false;

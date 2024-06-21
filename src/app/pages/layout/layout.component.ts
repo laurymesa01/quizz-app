@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, HostBinding, OnInit, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
@@ -12,27 +12,38 @@ import { CommonModule } from "@angular/common";
 })
 export class LayoutComponent implements OnInit{
 
-  userTheme   = localStorage.getItem("theme");
-  systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  checked: boolean = false;
-  document = document;
+  @HostBinding('class.dark') get mode() {return this.darkMode(); }
 
-  ngOnInit(){
-    if(this.userTheme === 'dark' || this.systemTheme){
-      document.documentElement.classList.add('dark');
-      this.checked = true;
+
+  // userTheme   = localStorage.getItem("theme");
+  // systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  darkMode = signal<boolean>(false);
+  checked: boolean = false;
+  initialize:boolean = false;
+
+  constructor(){
+    if (typeof window !== "undefined") {
+      this.darkMode.set(JSON.parse(window.localStorage.getItem("darkMode") ?? "false"))
+      if (this.darkMode() === true) {
+        this.checked = true;
+      }
+      this.initialize = true;
+      effect(() => {
+        window.localStorage.setItem('darkMode', JSON.stringify(this.darkMode()));
+      });
     }
   }
 
+  ngOnInit(){
+
+    // if( this.systemTheme){
+    //   document.documentElement.classList.add('dark');
+    //   this.checked = true;
+    // }
+  }
+
   changeMode(){
-    if(document.documentElement.classList.contains('dark')){
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem("theme", "light");
-      return;
-    }
-    document.documentElement.classList.add('dark');
-    localStorage.setItem("theme", "dark");
-    // document.documentElement.classList.toggle('dark');
+    this.darkMode.set(!this.darkMode());
   }
 
 }
