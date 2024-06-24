@@ -9,13 +9,13 @@
     </section>
     <section class="mt-12 flex flex-col space-y-4 flex-grow lg:mt-0">
       @for (option of questions[currentlyIndex].options; track $index) {
-        <button class="button-selection bg-pure-white flex justify-between rounded-2xl py-2 border-[2px] border-pure-white px-2 items-center cursor-pointer  focus:border-[2px] focus:border-purple dark:bg-navy dark:border-navy dark:focus:border-purple"
+        <button class="button-selection bg-pure-white flex justify-between rounded-2xl py-2 border-[2px] border-pure-white px-2 items-center cursor-pointer focus:border-[2px] focus:border-purple active:border-purple dark:bg-navy dark:border-navy dark:focus:border-purple"
                 (click)="checkAnswer(option)"
+                (keydown.enter)="checkAnswer(option)"
                 [class.correct]="option === questions[currentlyIndex].answer && option === selectedOption && isSubmited"
                 [class.incorrect]="option !== questions[currentlyIndex].answer && option === selectedOption && isSubmited"
                 [disabled]="isButtonDisabled"
-                tabindex="0"
-                (keydown.enter)="checkAnswer(option)">
+                tabindex="0">
           <div class="flex items-center">
             <div class="index bg-light-grey text-grey-navy py-1 w-12 rounded-lg text-[18px] md:text-[28px] dark:bg-grey-navy dark:text-light-grey">
               {{stringRef.fromCharCode(65 + $index)}}
