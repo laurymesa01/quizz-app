@@ -8,16 +8,16 @@ import { Quizz } from '../models/quizz.model';
 export class QuizzService {
 
   private http = inject(HttpClient);
-  private url = 'http://localhost:3000/quizzes';
+  private url = 'https://apiquizz-2.onrender.com';
 
   constructor() { }
 
   getQuizzes(){
-    return this.http.get<Quizz[]>(this.url);
+    return this.http.get<Quizz[]>(`${this.url}/quizzes`);
   }
 
   getQuizzByTitle(title: string){
     const params = new HttpParams().set('title', title);
-    return this.http.get<Quizz[]>(`${this.url}`, { params });
+    return this.http.get<Quizz[]>(`${this.url}/quizzes`, { params });
   }
 }
