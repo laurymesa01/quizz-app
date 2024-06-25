@@ -1,5 +1,9 @@
 # Frontend Mentor - Frontend quiz app solution
 
+![Design preview for the Frontend quiz app coding challenge](./preview.jpg)
+
+## Welcome! 👋
+
 This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/frontend-quiz-app-BE7xkzXQnU). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
