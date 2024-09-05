@@ -8,7 +8,7 @@ import { Quizz } from '../models/quizz.model';
 export class QuizzService {
 
   private http = inject(HttpClient);
-  private url = 'https://apiquizz-2.onrender.com';
+  private url = 'https://json-server-quizz.vercel.app/';
 
   constructor() { }
 
